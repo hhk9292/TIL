@@ -14,5 +14,9 @@
 - Webpack
   - `$ npm i -D webpack @babel/core babel-loader @babel/preset-env @babel/preset-react`
   - `$ npm i -D @types/webpack @types/node @babel/preset-typescript`
+  - `$ npm i -D webpack-cli`
+  - `$ npm i ts-node`
+  - `$ npm i -D react-refresh`
+  - `$ npm i -D @emotion/babel-plugin`
 - CSS
   - `$ npm i style-loader css-loader`
