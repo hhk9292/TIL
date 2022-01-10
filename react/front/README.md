@@ -4,9 +4,10 @@
 
 - React v17.0.2
   - `$ npm i react react-dom`
-  - react-router
-    - `$ npm i react-router react-router-dom`
-    - `$ npm i -D @types/react-router @types/react-router-dom`
+  - react-router (강의에서는 v5 사용)
+    > [v5, v6 달라진점](https://velog.io/@ksmfou98/React-Router-v6-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%EC%A0%95%EB%A6%AC)
+    - `$ npm i react-router@5 react-router-dom@5`
+    - `$ npm i -D @types/react-router@5 @types/react-router-dom@5`
 - TypeSCript v4.5.4
   - `$ npm i typescript`
   - `$ npm i @types/react @types/react-dom`
