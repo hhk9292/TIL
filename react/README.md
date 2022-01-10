@@ -10,13 +10,11 @@
 ### Backend
 
 - Node.js v14
-  - Express
-  - Sequelize
 - MySQL v8.0
 
 ### Frontend
 
-- React
+- React v17.0.2
 
 ## 실행
 
