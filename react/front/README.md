@@ -4,6 +4,9 @@
 
 - React v17.0.2
   - `$ npm i react react-dom`
+  - react-router
+    - `$ npm i react-router react-router-dom`
+    - `$ npm i -D @types/react-router @types/react-router-dom`
 - TypeSCript v4.5.4
   - `$ npm i typescript`
   - `$ npm i @types/react @types/react-dom`
