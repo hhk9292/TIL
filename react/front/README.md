@@ -12,11 +12,17 @@
 - Prettier
   - `$ npm i -D prettier eslint-plugin-prettier eslint-config-prettier`
 - Webpack
+
   - `$ npm i -D webpack @babel/core babel-loader @babel/preset-env @babel/preset-react`
   - `$ npm i -D @types/webpack @types/node @babel/preset-typescript`
   - `$ npm i -D webpack-cli`
   - `$ npm i ts-node`
-  - `$ npm i -D react-refresh`
+  - `$ npm i -D fork-ts-checker-webpack-plugin`
   - `$ npm i -D @emotion/babel-plugin`
+  - hot reloading
+    - `$ npm i -D webpack-dev-server @types/webpack-dev-server`
+    - `$ npm i -D react-refresh @pmmmwh/react-refresh-webpack-plugin`
+    - `$ npm i -D webpack-dev-server @types/webpack-dev-server`
+
 - CSS
   - `$ npm i style-loader css-loader`
