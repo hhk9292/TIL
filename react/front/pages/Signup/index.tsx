@@ -1,9 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import useSWR from 'swr';
 
 import { Form, Label, Input, LinkContainer, Button, Header, Error, Success } from './styles';
 import useInput from '@hooks/useInput';
+import fetcher from '@utils/fetcher';
 
 const SignUp = () => {
   const [email, onChangeEmail] = useInput('');
@@ -14,6 +16,7 @@ const SignUp = () => {
   const [signUpError, setSignUpError] = useState('');
   const [signUpSuccess, setSignUpSuccess] = useState(false);
 
+  const { data, error, mutate } = useSWR('/api/users', fetcher);
   const onChangePassword = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setPassword(e.target.value);
@@ -56,6 +59,14 @@ const SignUp = () => {
     },
     [email, nickname, password, passwordCheck],
   );
+
+  if (data === undefined) {
+    return <div>로딩중...</div>;
+  }
+
+  if (data) {
+    return <Redirect to="/workspace/channel" />;
+  }
 
   return (
     <div>

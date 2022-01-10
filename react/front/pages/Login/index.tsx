@@ -1,13 +1,14 @@
 import React, { useState, useCallback } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import useSWR from 'swr';
 
+import { Form, Error, Label, Input, LinkContainer, Button, Header } from '@pages/SignUp/styles';
 import useInput from '@hooks/useInput';
-import { Success, Form, Error, Label, Input, LinkContainer, Button, Header } from '@pages/SignUp/styles';
+import fetcher from '@utils/fetcher';
 
 const LogIn = () => {
-  const { data, error, revalidate, mutate } = useSWR('/api/users', fetcher);
-
+  const { data, error, mutate } = useSWR('/api/users', fetcher);
   const [logInError, setLogInError] = useState(false);
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -24,7 +25,7 @@ const LogIn = () => {
           },
         )
         .then((response) => {
-          revalidate();
+          mutate(response.data, false);
         })
         .catch((error) => {
           setLogInError(error.response?.data?.statusCode === 401);
@@ -38,7 +39,7 @@ const LogIn = () => {
   }
 
   if (data) {
-    return <Redirect to="/workspace/sleact/channel/일반" />;
+    return <Redirect to="/workspace/channel" />;
   }
 
   // console.log(error, userData);

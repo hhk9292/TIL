@@ -32,8 +32,14 @@
   - `$ npm i @loadable/component`
   - `$ npm i -D @types/loadable__component`
 - CSS
+
   - `$ npm i style-loader css-loader`
   - `$ npm i @emotion/react @emotion/styled`
+
+- Axios
+  - `$ npm i axios`
+- SWR
+  - `$ npm i swr`
 
 ## 폴더 구조
 
