@@ -28,8 +28,12 @@
     - `$ npm i -D react-refresh @pmmmwh/react-refresh-webpack-plugin`
     - `$ npm i -D webpack-dev-server @types/webpack-dev-server`
 
+- Code Splitting
+  - `$ npm i @loadable/component`
+  - `$ npm i -D @types/loadable__component`
 - CSS
   - `$ npm i style-loader css-loader`
+  - `$ npm i @emotion/react @emotion/styled`
 
 ## 폴더 구조
 
