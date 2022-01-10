@@ -16,7 +16,7 @@
   - `$ npm i -D webpack @babel/core babel-loader @babel/preset-env @babel/preset-react`
   - `$ npm i -D @types/webpack @types/node @babel/preset-typescript`
   - `$ npm i -D webpack-cli`
-  - `$ npm i ts-node`
+  - `$ npm i -D ts-node`
   - `$ npm i -D fork-ts-checker-webpack-plugin`
   - `$ npm i -D @emotion/babel-plugin`
   - hot reloading
