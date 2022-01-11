@@ -1,0 +1,10 @@
+node_modules
+
+# sleact 전체 코드
+/ sleact
+
+# env
+.env
+
+# build
+dist

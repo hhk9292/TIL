@@ -31,5 +31,5 @@
 
 ## 소스코드
 
-- [Backend](./sleact/back)
+- [Backend](./back)
 - [Frontend](./front)
