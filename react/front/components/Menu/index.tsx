@@ -1,15 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { FC, PropsWithChildren, useCallback } from 'react';
 import { CloseModalButton, CreateMenu } from './styles';
 
 interface Props {
-  children: React.ReactNode;
   style: React.CSSProperties;
   show: boolean;
-  onCloseModal: () => void;
+  onCloseModal: (e: React.MouseEvent) => void;
   closeButton?: boolean;
 }
 
-const Menu: React.FC<Props> = ({ children, style, show, onCloseModal, closeButton = true }) => {
+const Menu: FC<PropsWithChildren<Props>> = ({ children, style, show, onCloseModal, closeButton = true }) => {
   const stopPropagation = useCallback((e) => {
     e.stopPropagation();
   }, []);
