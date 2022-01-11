@@ -40,6 +40,8 @@
   - `$ npm i axios`
 - SWR
   - `$ npm i swr`
+- gravatar
+  - `$ npm i gravatar @types/gravatar`
 
 ## 폴더 구조
 
