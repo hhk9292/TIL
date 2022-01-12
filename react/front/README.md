@@ -42,6 +42,8 @@
   - `$ npm i swr`
 - gravatar
   - `$ npm i gravatar @types/gravatar`
+- react-toastify
+  - `$ npm i react-toastfy`
 
 ## 폴더 구조
 

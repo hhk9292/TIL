@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import axios from 'axios';
 import gravatar from 'gravatar';
 import loadable from '@loadable/component';
+import { toast } from 'react-toastify';
 
 import fetcher from '@utils/fetcher';
 import { IUser } from '@typings/db';
@@ -53,13 +54,48 @@ const Workspace: React.FC = () => {
     setShowUserMenu(false);
   }, []);
 
-  const onClickCreateWorkspace = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
+  const onClickCreateWorkspace = useCallback(() => {
+    setShowCreateWorkspaceModal(true);
   }, []);
 
-  const onCreateWorkspace = useCallback(() => {
-    setShowCreateWorkspaceModal((prev) => !prev);
-  }, []);
+  const onCreateWorkspace = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+
+      if (!newWorkspace || !newWorkspace.trim()) {
+        return;
+      }
+
+      if (!newUrl || !newUrl.trim()) {
+        return;
+      }
+
+      axios
+        .post(
+          '/api/workspaces',
+          {
+            workspace: newWorkspace,
+            url: newUrl,
+          },
+          {
+            withCredentials: true,
+          },
+        )
+        .then(() => {
+          mutate();
+          setShowCreateWorkspaceModal(false);
+          setNewWorkspace('');
+          setNewUrl('');
+        })
+        .catch((error) => {
+          console.dir(error);
+          toast.error(error.response?.data, { position: 'bottom-center' });
+        });
+
+      setShowCreateWorkspaceModal((prev) => !prev);
+    },
+    [newWorkspace, newUrl],
+  );
 
   const onCloseModal = useCallback(() => {
     setShowCreateWorkspaceModal(false);
