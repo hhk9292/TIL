@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, VFC } from 'react';
 import { Redirect, Switch, Route, Link } from 'react-router-dom';
 import useSWR from 'swr';
 import axios from 'axios';
@@ -30,7 +30,7 @@ import Modal from '@components/Modal';
 import { Button, Input, Label } from '@pages/SignUp/styles';
 import useInput from '@hooks/useInput';
 
-const Workspace: React.FC = () => {
+const Workspace: VFC = () => {
   const { data: userData, error, mutate } = useSWR<IUser | false>('/api/users', fetcher);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showCreateWorkspaceModal, setShowCreateWorkspaceModal] = useState(false);
