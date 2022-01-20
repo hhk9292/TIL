@@ -3,7 +3,6 @@
 ## Sleact (Slack + React)
 
 > Slack Clone Coding
-> [전체 코드](./sleact)
 
 ## 환경설정
 
